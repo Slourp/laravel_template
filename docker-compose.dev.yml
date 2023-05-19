@@ -10,7 +10,7 @@ services:
         restart: always
         volumes:
             - ./docker/nginx/conf.d:/etc/nginx/conf.d/
-            - .:/var/www/app
+            - ./app:/var/www/app
         env_file:
             - .env
         labels:
@@ -35,7 +35,7 @@ services:
                 GROUP_ID: '${GROUP_yID:-1000}'
                 USER: '${USER:-User}'
         volumes:
-            - .:/var/www/app
+            - ./app:/var/www/app
             - ./docker/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini:ro
         env_file:
             - .env

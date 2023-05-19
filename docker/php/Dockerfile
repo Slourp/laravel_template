@@ -44,7 +44,6 @@ USER ${USER}
 
 # copy application files to the working directory
 COPY ./ /var/www/app
-RUN rm -rf /var/www/app/docker
 
 # run composer dump-autoload --optimize
 # RUN composer dump-autoload --optimize
